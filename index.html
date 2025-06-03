@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bouton Test</title>
+</head>
+<body>
+    <button id="beepBtn">Faire Bip</button>
+
+    <script>
+        document.getElementById('beepBtn').addEventListener('click', () => {
+            fetch('https://ton-hebergeur.com/app', { method: 'POST' })
+                .then(response => response.text())
+                .then(data => alert(data))
+                .catch(err => alert('Erreur: ' + err));
+        });
+    </script>
+</body>
+</html>
